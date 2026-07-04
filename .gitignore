@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+data/
+models/
+fonts/*.ttf
+*.gguf
+.DS_Store
+dist/
+*.egg-info/
