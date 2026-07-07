@@ -7,7 +7,9 @@
       "Skill(code-review)",
       "Bash(gh repo *)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(nvidia-smi)",
+      "Bash(sysctl -n machdep.cpu.brand_string)"
     ]
   }
 }
