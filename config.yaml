@@ -1,0 +1,32 @@
+detection:
+  model_path: "yolov8n.pt"
+  confidence_threshold: 0.45
+  device: "cuda"
+  box_padding: 8
+
+inpainting:
+  model_name: "lama"
+  device: "cuda"
+
+ocr:
+  device: "cuda"
+
+translation:
+  ollama_url: "http://localhost:11434"
+  model_name: "qwen2.5:7b-instruct-q4_K_M"
+  temperature: 0.2
+  max_retries: 2
+  timeout_seconds: 90
+
+typesetting:
+  font_path: "fonts/anime_ace.ttf"
+  max_font_size: 24
+  min_font_size: 8
+  text_color: "#000000"
+  padding: 6
+
+pipeline:
+  skip_existing: true
+
+paths:
+  output_dir: "data/output"
