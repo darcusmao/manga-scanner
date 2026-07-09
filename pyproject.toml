@@ -3,10 +3,13 @@ name = "manga-scanner"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+    "click>=8.4.2",
+    "httpx>=0.28.1",
     "pydantic-settings>=2.14.2",
     "pyyaml>=6.0.3",
     "torch>=2.12.1",
     "torchvision>=0.27.1",
+    "tqdm>=4.68.4",
     "ultralytics>=8.4.90",
 ]
 
@@ -26,4 +29,5 @@ testpaths = ["tests"]
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
+    "pytest-mock>=3.15.1",
 ]

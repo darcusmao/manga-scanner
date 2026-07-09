@@ -1,17 +1,43 @@
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING
+from pathlib import Path
 
 import numpy as np
+from PIL import Image
 
 from manga_scanner.config import DetectionConfig
 from manga_scanner.types import BoundingBox, DetectionResult, MaskResult
 
-if TYPE_CHECKING:
-    pass
-
 logger = logging.getLogger(__name__)
+
+
+def load_image(image_path: Path) -> np.ndarray:
+    """Load image to HxWx3 uint8 RGB numpy array."""
+    img = Image.open(image_path).convert("RGB")
+    return np.array(img)
+
+
+def generate_mask(
+    image: np.ndarray,
+    boxes: list[BoundingBox],
+    padding: int = 8,
+) -> MaskResult:
+    """
+    Create a binary inpainting mask from bounding boxes.
+    padding: pixels to expand each bbox in all four directions.
+    """
+    h, w = image.shape[:2]
+    mask = np.zeros((h, w), dtype=np.uint8)
+
+    for box in boxes:
+        x1 = max(0, box.x1 - padding)
+        y1 = max(0, box.y1 - padding)
+        x2 = min(w, box.x2 + padding)
+        y2 = min(h, box.y2 + padding)
+        mask[y1:y2, x1:x2] = 255
+
+    return MaskResult(original=image, mask=mask, boxes=boxes)
 
 
 class BubbleMasker:

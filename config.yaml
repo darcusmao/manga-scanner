@@ -19,7 +19,7 @@ translation:
   timeout_seconds: 90
 
 typesetting:
-  font_path: "fonts/anime_ace.ttf"
+  font_path: "fonts/Bangers-Regular.ttf"
   max_font_size: 24
   min_font_size: 8
   text_color: "#000000"

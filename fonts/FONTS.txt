@@ -1,0 +1,23 @@
+Fonts used in this project
+==========================
+
+Bangers-Regular.ttf
+  License:  SIL Open Font License 1.1 (OFL) — free for personal and commercial use
+  Source:   https://fonts.google.com/specimen/Bangers
+  GitHub:   https://github.com/google/fonts/tree/main/ofl/bangers
+  Style:    Bold comic lettering, all-caps, excellent readability at small sizes
+
+For production manga localization, consider replacing with:
+
+  Anime Ace 2.0 (Blambot)
+    License: Free for personal use only — NOT for commercial redistribution
+    Source:  https://blambot.com/pages/free-fonts
+    Style:   Industry standard manga/anime lettering
+
+  CC Wild Words (Comicraft)
+    License: Free for non-commercial use
+    Source:  https://www.comicbookfonts.com/
+
+Place the chosen .ttf file in this directory and update config.yaml:
+  typesetting:
+    font_path: "fonts/YourFont.ttf"

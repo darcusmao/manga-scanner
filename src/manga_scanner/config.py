@@ -8,6 +8,7 @@ class DetectionConfig(BaseModel):
     confidence_threshold: float = 0.45
     device: str = "cuda"
     box_padding: int = 8
+    row_threshold: int = 50
 
 
 class InpaintingConfig(BaseModel):
@@ -28,7 +29,7 @@ class TranslationConfig(BaseModel):
 
 
 class TypesettingConfig(BaseModel):
-    font_path: str = "fonts/anime_ace.ttf"
+    font_path: str = "fonts/Bangers-Regular.ttf"
     max_font_size: int = 24
     min_font_size: int = 8
     text_color: str = "#000000"

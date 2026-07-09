@@ -9,7 +9,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
       "Bash(nvidia-smi)",
-      "Bash(sysctl -n machdep.cpu.brand_string)"
+      "Bash(sysctl -n machdep.cpu.brand_string)",
+      "Bash(curl -fsSL \"https://github.com/google/fonts/raw/main/ofl/bangers/Bangers-Regular.ttf\" -o /Users/marcusdao/Projects/manga-scanner/fonts/Bangers-Regular.ttf)"
     ]
   }
 }

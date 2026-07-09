@@ -1,0 +1,25 @@
+{
+  "characters": [
+    {
+      "name": "Kira",
+      "jp_name": "キラ",
+      "speech_register": "formal",
+      "pronouns": "he/him",
+      "speech_notes": "Speaks in long sentences with deliberate word choices. Never uses contractions. Refers to himself by name occasionally.",
+      "relationships": {
+        "Ryuk": "tool",
+        "L": "nemesis"
+      }
+    },
+    {
+      "name": "Ryuk",
+      "jp_name": "リューク",
+      "speech_register": "casual",
+      "pronouns": "he/him",
+      "speech_notes": "Dry, amused tone. Short sentences. Frequently makes observations about humans as curiosities.",
+      "relationships": {
+        "Kira": "owner"
+      }
+    }
+  ]
+}
