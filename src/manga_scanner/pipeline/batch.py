@@ -42,11 +42,42 @@ def collect_pages(input_dir: Path) -> list[Path]:
     return sorted(p for p in input_dir.iterdir() if p.suffix.lower() in IMAGE_EXTENSIONS)
 
 
+def _dump_intermediates(item: "_PageIntermediate", dump_dir: Path) -> None:
+    dump_dir.mkdir(parents=True, exist_ok=True)
+    stem = item.input_path.stem
+    payload = {
+        "filename": item.input_path.name,
+        "page_number": item.page_number,
+        "boxes": [
+            {
+                "index": i,
+                "bbox": [b.x1, b.y1, b.x2, b.y2],
+                "confidence": b.confidence,
+                "label": b.label,
+            }
+            for i, b in enumerate(item.detection.boxes)
+        ],
+        "ocr": [
+            {
+                "index": r.index,
+                "text": r.text,
+                "bbox": [r.box.x1, r.box.y1, r.box.x2, r.box.y2],
+            }
+            for r in item.ocr_results
+        ],
+    }
+    import json
+    (dump_dir / f"{stem}.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
 def process_chapter(
     input_dir: Path,
     output_root: Path,
     config: Config,
     characters_path: Path,
+    dump_dir: Path | None = None,
 ) -> None:
     characters = load_character_profiles(characters_path)
     pages = collect_pages(input_dir)
@@ -125,6 +156,8 @@ def process_chapter(
                 item.ocr_results.append(
                     OCRResult(box=crop_result.box, text=text, index=crop_result.index)
                 )
+            if dump_dir is not None:
+                _dump_intermediates(item, dump_dir)
 
     log_vram("after OCR stage")
 

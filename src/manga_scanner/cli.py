@@ -42,6 +42,12 @@ def app(ctx: click.Context, verbose: bool) -> None:
 )
 @click.option("--config", "-c", "config_path", default="config.yaml", type=click.Path(path_type=Path))
 @click.option("--characters", "characters_path", default="characters.json", type=click.Path(path_type=Path))
+@click.option(
+    "--dump-dir", "dump_dir",
+    default=None,
+    type=click.Path(path_type=Path),
+    help="Save per-page detection + OCR JSON for benchmarking.",
+)
 @click.pass_context
 def chapter(
     ctx: click.Context,
@@ -49,10 +55,11 @@ def chapter(
     output_root: Path,
     config_path: Path,
     characters_path: Path,
+    dump_dir: Path | None,
 ) -> None:
     """Process a directory of manga pages as a single chapter."""
     config = load_config(config_path)
-    process_chapter(input_dir, output_root, config, characters_path)
+    process_chapter(input_dir, output_root, config, characters_path, dump_dir=dump_dir)
 
 
 @app.command()

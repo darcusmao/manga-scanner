@@ -1,0 +1,143 @@
+{
+  "version": "1.0",
+  "instructions": [
+    "Add one entry per benchmark page under 'pages'.",
+    "For each page, list every speech bubble in reading order (right-to-left within rows, top-to-bottom).",
+    "bbox format: [x1, y1, x2, y2] in pixels.",
+    "japanese: exact transcription of the printed Japanese text in the bubble.",
+    "character: name from characters.json, or empty string if unknown/narrator.",
+    "category: one of dense_dialogue, sfx_mixed, stylized, minimal, monologue."
+  ],
+  "pages": [
+    {
+      "filename": "page_001.png",
+      "category": "dense_dialogue",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER — transcribe actual text here",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_002.png",
+      "category": "dense_dialogue",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER — transcribe actual text here",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_003.png",
+      "category": "sfx_mixed",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_004.png",
+      "category": "sfx_mixed",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_005.png",
+      "category": "stylized",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_006.png",
+      "category": "stylized",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_007.png",
+      "category": "minimal",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_008.png",
+      "category": "minimal",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_009.png",
+      "category": "monologue",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "page_010.png",
+      "category": "monologue",
+      "bubbles": [
+        {
+          "index": 0,
+          "bbox": [0, 0, 0, 0],
+          "japanese": "PLACEHOLDER",
+          "character": "",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
