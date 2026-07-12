@@ -8,5 +8,12 @@ models/
 fonts/*.ttf
 *.gguf
 .DS_Store
+
+# Benchmark images — copyrighted manga pages, never commit to a public repo.
+# See tests/fixtures/benchmark/README.txt for what to put here.
+tests/fixtures/benchmark/*.png
+tests/fixtures/benchmark/*.jpg
+tests/fixtures/benchmark/*.jpeg
+tests/fixtures/benchmark/results.md
 dist/
 *.egg-info/
