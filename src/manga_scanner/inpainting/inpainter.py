@@ -28,11 +28,10 @@ class Inpainter:
         mask:  HxW uint8 (0=preserve, 255=inpaint)
         returns: HxWx3 uint8 RGB with masked regions inpainted
         """
-        pil_image = Image.fromarray(image)
-        pil_mask = Image.fromarray(mask)
         req = self._InpaintRequest(hd_strategy=self._HDStrategy.ORIGINAL)
-        result = self.model(pil_image, pil_mask, req)
-        return np.array(result)
+        # ModelManager expects numpy arrays, not PIL Images
+        result = self.model(image, mask, req)
+        return result.astype(np.uint8)
 
     def unload(self) -> None:
         logger.info("Unloading LaMa model from VRAM.")
