@@ -21,11 +21,16 @@ class OCRConfig(BaseModel):
 
 
 class TranslationConfig(BaseModel):
+    backend: str = "ollama"  # "ollama" | "deepl" | "google"
+    # Ollama settings
     ollama_url: str = "http://localhost:11434"
     model_name: str = "qwen2.5:7b-instruct-q4_K_M"
     temperature: float = 0.2
     max_retries: int = 2
-    timeout_seconds: int = 90
+    timeout_seconds: int = 300
+    # API-based backends (prefer env vars: MANGA_TRANSLATION__DEEPL_API_KEY, etc.)
+    deepl_api_key: str = ""
+    google_api_key: str = ""
 
 
 class TypesettingConfig(BaseModel):

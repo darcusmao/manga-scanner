@@ -43,7 +43,7 @@ def _patch_all_models():
         patch("manga_scanner.pipeline.batch.TextDetector"),
         patch("manga_scanner.pipeline.batch.Inpainter"),
         patch("manga_scanner.pipeline.batch.MangaOCR"),
-        patch("manga_scanner.pipeline.batch.Translator"),
+        patch("manga_scanner.pipeline.batch.create_translator"),
     )
 
 
@@ -55,7 +55,7 @@ def test_process_chapter_produces_output_files(config, output_dir):
         patch("manga_scanner.pipeline.batch.TextDetector") as MockDetector,
         patch("manga_scanner.pipeline.batch.Inpainter") as MockInpainter,
         patch("manga_scanner.pipeline.batch.MangaOCR") as MockOCR,
-        patch("manga_scanner.pipeline.batch.Translator") as MockTranslator,
+        patch("manga_scanner.pipeline.batch.create_translator") as MockTranslator,
     ):
         mock_det = MagicMock()
         mock_det.detect.side_effect = _make_fake_detection
@@ -110,7 +110,7 @@ def test_process_chapter_skips_existing(config, output_dir):
         patch("manga_scanner.pipeline.batch.TextDetector") as MockDetector,
         patch("manga_scanner.pipeline.batch.Inpainter"),
         patch("manga_scanner.pipeline.batch.MangaOCR"),
-        patch("manga_scanner.pipeline.batch.Translator"),
+        patch("manga_scanner.pipeline.batch.create_translator"),
     ):
         mock_det = MagicMock()
         mock_det.detect.side_effect = _make_fake_detection

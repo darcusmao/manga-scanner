@@ -12,6 +12,13 @@ ocr:
   device: "cpu"
 
 translation:
+  # backend: "ollama" | "deepl" | "google"
+  # deepl and google are instant API calls (~ms vs ~5min for cold Ollama).
+  # Set API keys via env vars to avoid committing secrets:
+  #   MANGA_TRANSLATION__DEEPL_API_KEY=your-key-here
+  #   MANGA_TRANSLATION__GOOGLE_API_KEY=your-key-here
+  backend: "ollama"
+  # Ollama settings (only used when backend = "ollama")
   ollama_url: "http://localhost:11434"
   model_name: "qwen2.5:7b-instruct-q4_K_M"
   temperature: 0.2

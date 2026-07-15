@@ -17,7 +17,7 @@ from manga_scanner.ocr.cropper import extract_crops
 from manga_scanner.ocr.ocr import MangaOCR
 from manga_scanner.output import resolve_output_path
 from manga_scanner.translation.models import CharacterProfile, load_character_profiles
-from manga_scanner.translation.translator import Translator
+from manga_scanner.translation.translator import create_translator
 from manga_scanner.typesetting.renderer import render_translations
 from manga_scanner.types import DetectionResult, OCRResult
 from manga_scanner.vram import clear_cuda_cache, log_vram, managed_model
@@ -163,7 +163,7 @@ def process_chapter(
 
     # Stage D: Translation + Stage E: Render/Save
     logger.info("Stage D: Translating and rendering pages...")
-    translator = Translator(config.translation)
+    translator = create_translator(config.translation)
     for item in tqdm(intermediates, desc="Translate"):
         valid_ocr = [r for r in item.ocr_results if r.text.strip()]
         if not valid_ocr:
