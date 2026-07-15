@@ -1,15 +1,15 @@
 detection:
   model_path: "yolov8n.pt"
   confidence_threshold: 0.45
-  device: "cuda"
+  device: "cpu"
   box_padding: 8
 
 inpainting:
-  model_name: "lama"
-  device: "cuda"
+  model_name: "manga"
+  device: "cpu"
 
 ocr:
-  device: "cuda"
+  device: "cpu"
 
 translation:
   ollama_url: "http://localhost:11434"

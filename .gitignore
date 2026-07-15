@@ -5,6 +5,10 @@ __pycache__/
 *.pyd
 data/
 models/
+*.pt
+*.pth
+*.onnx
+*.gguf
 fonts/*.ttf
 *.gguf
 .DS_Store
