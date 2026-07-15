@@ -5,7 +5,7 @@ detection:
   box_padding: 8
 
 inpainting:
-  model_name: "manga"
+  model_name: "cv2"
   device: "cpu"
 
 ocr:
@@ -16,7 +16,7 @@ translation:
   model_name: "qwen2.5:7b-instruct-q4_K_M"
   temperature: 0.2
   max_retries: 2
-  timeout_seconds: 90
+  timeout_seconds: 300
 
 typesetting:
   font_path: "fonts/Bangers-Regular.ttf"
